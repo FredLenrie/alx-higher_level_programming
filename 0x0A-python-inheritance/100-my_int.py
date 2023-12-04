@@ -1,41 +1,18 @@
 #!/usr/bin/python3
-"""Defines a class MyInt that inherits from int.
-MyInt is a rebel. MyInt has == and != operators inverted
-"""
+
+"""Defines a Rectangle subclass Square."""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class MyInt(int):
-    """Defines a class MyInt.
+class Square(Rectangle):
+    """Represent a square."""
 
-    Args:
-        int (int): value
-    """
-    def __init__(self, value):
-        """Creates new instances of class MyInt.
+    def __init__(self, size):
+        """Initialize a new square.
 
         Args:
-            value (int): integer.
+            size (int): The size of the new square.
         """
-        self.__value = value
-
-    def __eq__(self, other):
-        """The method equal
-
-        Args:
-            other (int): integer.
-
-        Returns:
-            boolean: True or False.
-        """
-        return self.__value != other
-
-    def __ne__(self, other):
-        """The method not equal
-
-        Args:
-            other (int): integer.
-
-        Returns:
-            boolean: True or False
-        """
-        return self.__value == other
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
